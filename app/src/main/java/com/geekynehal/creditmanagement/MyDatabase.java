@@ -12,13 +12,14 @@ public class MyDatabase extends SQLiteOpenHelper
     public static final String TABLE_NAME_TRANS="trans";
     public static final String TABLE_NAME_USERS="users";
     //Columns
-    public static final String COL_TRANS_NAME="name";
+    public static final String COL_TO_TRANS_NAME="name_a";
+    public static final String COL_FROM_TRANS_NAME="name_b";
     public static final String COL_TRANS_CREDIT="credit";
     public static final String COL_USER_NAME="name";
     public static final String COL_USER_EMAIL="email";
     public static final String COL_USER_CREDIT="credit";
     //Table Creation
-    public static final String CREATE_TRANS="create table "+TABLE_NAME_TRANS+" ("+COL_TRANS_NAME+" text,"+COL_TRANS_CREDIT+" text)";
+    public static final String CREATE_TRANS="create table "+TABLE_NAME_TRANS+" ("+COL_TO_TRANS_NAME+" text,"+COL_FROM_TRANS_NAME+" text,"+COL_TRANS_CREDIT+" text)";
     public static final String CREATE_USERS="create table "+TABLE_NAME_USERS+" ("+COL_USER_NAME+" text,"+COL_USER_EMAIL+" text,"+COL_USER_CREDIT+" text)";
 
     public MyDatabase(Context context)
