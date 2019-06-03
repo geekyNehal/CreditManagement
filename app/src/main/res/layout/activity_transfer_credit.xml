@@ -8,16 +8,8 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:id="@+id/spinner_from">
-
-    </Spinner>
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/spinner_to"
         android:layout_marginTop="25dp">
-
     </Spinner>
     <EditText
         android:layout_width="match_parent"

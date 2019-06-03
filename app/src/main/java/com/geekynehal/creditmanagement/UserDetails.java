@@ -32,9 +32,15 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        Intent intent=new Intent();
-        intent.setClass(getApplicationContext(),TransferCreditActivity.class);
-        intent.putExtra("name",name);
-        startActivity(intent);
+        try {
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(), TransferCreditActivity.class);
+            intent.putExtra("name_a", name);
+            startActivity(intent);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
