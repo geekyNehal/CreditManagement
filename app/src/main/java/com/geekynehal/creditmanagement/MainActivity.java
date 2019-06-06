@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button transferTable,viewUsers,add_item;
+    Button viewUsers,add_item;
     EditText name_text,email_text,credit_text;
     MyDatabase md;
     @Override
@@ -21,14 +21,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         md=new MyDatabase(this);
-        transferTable=findViewById(R.id.transfer_table_button);
         viewUsers=findViewById(R.id.view_users_button);
         add_item=findViewById(R.id.add_item);
         name_text=findViewById(R.id.name_text);
         email_text=findViewById(R.id.email_text);
         credit_text=findViewById(R.id.current_credit_text);
         add_item.setOnClickListener(this);
-        transferTable.setOnClickListener(this);
         viewUsers.setOnClickListener(this);
     }
 
@@ -37,10 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         switch(view.getId())
         {
-            case R.id.transfer_table_button:
-
-                break;
-
             case R.id.view_users_button:
                 startActivity(new Intent(this,UserListActivity.class));
                 break;

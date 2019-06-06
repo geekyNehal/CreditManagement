@@ -62,9 +62,10 @@ public class TransferCreditActivity extends AppCompatActivity implements View.On
     public void onClick(View view)
     {
         amount=Integer.parseInt(amt.getText().toString());
-        int curr_credit=getCredit();
-        int credit_from=curr_credit-amount;
-        int credit_to=curr_credit+amount;
+        int curr_credit_from=getCredit(name_from);
+        int curr_credit_to=getCredit(name_to);
+        int credit_from=curr_credit_from-amount;
+        int credit_to=curr_credit_to+amount;
         updateCredit(name_from,credit_from);
         updateCredit(name_to,credit_to);
         Toast.makeText(this, "Value Updated successfully..", Toast.LENGTH_SHORT).show();
@@ -81,12 +82,12 @@ public class TransferCreditActivity extends AppCompatActivity implements View.On
         sd.update(MyDatabase.TABLE_NAME_USERS,contentValues,whereClause,whereArgs);
     }
 
-    private int getCredit()
+    private int getCredit(String name)
     {
         SQLiteDatabase sd=myDatabase.getReadableDatabase();
         String[] columns={MyDatabase.COL_USER_CREDIT};
         String selection=MyDatabase.COL_USER_NAME+"=?";
-        String[] selection_args={name_from};
+        String[] selection_args={name};
         Cursor cursor=sd.query(MyDatabase.TABLE_NAME_USERS,columns,selection,selection_args,null,null,null);
         int curr_credit=0;
         int flag=0;
